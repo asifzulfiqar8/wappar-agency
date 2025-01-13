@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-white: rgba(252, 252, 253, 1);
+  --bg-black-dark: rgba(25, 25, 25, 1);
+  --primary: rgba(28, 100, 242, 1);
+  --poppins: "Poppins", serif;
+  --dm-sans: "DM Sans", serif;
+  --giest: "Geist", serif;
+}
+
+body {
+  font-family: var(--giest);
+  overflow-x: hidden !important;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background: #191919;
+}
+body::-webkit-scrollbar-thumb {
+  width: 5px;
+  background: #fff;
+}
+.scroll-0::-webkit-scrollbar {
+  width: 0;
+}
+
+/* hero */
+.hero_heading {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.12) 100%
+  );
+  border-image-source: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.11) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #1b1b1b 100%);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.3;
+}
+
+/* pricing page */
+.pricing_card {
+  background: linear-gradient(
+    23.95deg,
+    rgba(255, 255, 255, 0.12) 30.95%,
+    rgba(255, 255, 255, 0.23) 83.96%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0);
+  border-image-source: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.11) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(60.7826042175293px);
+}
+
+.pricing_card .cost {
+  background: linear-gradient(180deg, #3772ff 0%, rgba(55, 114, 255, 0.4) 100%);
+  border: 1px solid #3f4aaf80;
+  backdrop-filter: blur(-1px);
+  /* box-shadow: 0px 10px 10px 0px #0000001A; */
+  /* box-shadow: 0px 4px 4px 0px #0000000D; */
+  box-shadow: 0px 10px 40px 0px #3f4aaf80;
+}
+
+.pricing_card .price {
+  text-shadow: 2px 0.03px 0px #000;
+}
+
+/* loader */
+.spin-loader {
+  width: 24px;
+  --b: 6px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, #fff) content-box;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 20deg,
+      #0000 21deg 46deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l4 1s infinite steps(10);
+}
+@keyframes l4 {
+  to {
+    transform: rotate(1turn);
+  }
+}
