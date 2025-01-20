@@ -21,6 +21,9 @@ import CallIcon from "./icons/contact/CallIcon";
 import MailIcon from "./icons/contact/MailIcon";
 import SupportIcon from "./icons/contact/SupportIcon";
 import MessageIcon from "./icons/contact/MessageIcon";
+import TimerIcon from "./icons/home/TimerIcon";
+import AppIcon from "./icons/home/AppIcon";
+import PublishIcon from "./icons/home/PublishIcon";
 
 export {
   Logo,
@@ -46,4 +49,7 @@ export {
   MailIcon,
   SupportIcon,
   MessageIcon,
+  TimerIcon,
+  AppIcon,
+  PublishIcon,
 };

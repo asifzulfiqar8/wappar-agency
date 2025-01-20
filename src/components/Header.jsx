@@ -1,5 +1,5 @@
 "use client";
-
+import { usePathname } from "next/navigation";
 import { CrossIcon, HamburgerIcon, Logo } from "@/assets/icons";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -27,6 +27,7 @@ const pages = [
 ];
 
 const Header = () => {
+  const pathname = usePathname();
   const [menuOpen, setIsMenuOpen] = useState(false);
   const menuOpenHandler = () => setIsMenuOpen(!menuOpen);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -41,8 +42,9 @@ const Header = () => {
       window.document.body.style.overflowY = "scroll";
     }
   }, [menuOpen, authModalOpen]);
+
   return (
-    <header className="w-full bg-white">
+    <header className="w-full bg-white max-lg:sticky max-lg:top-[-1px] z-50">
       <article className="container mx-auto px-4">
         <section className="h-[80px] flex items-center justify-between">
           <Link
@@ -54,7 +56,7 @@ const Header = () => {
           </Link>
           {/* Navigation links */}
           <div
-            className={`fixed lg:contents top-[80px] left-0 right-0 bottom-0 bg-white/30 backdrop-blur-[2px] transition-opacity duration-500 z-[99] ${
+            className={`fixed lg:contents top-[70px] left-0 right-0 bottom-0 bg-white/30 backdrop-blur-[2px] transition-opacity duration-500 z-[99] ${
               menuOpen
                 ? "opacity-100 visible"
                 : "opacity-0 invisible lg:opacity-100 lg:visible"
@@ -71,7 +73,11 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                     href={page.route}
                     key={i}
-                    className="text-xl lg:text-sm font-semibold lg:font-medium text-[#777E90] font-geist"
+                    className={`text-xl lg:text-sm font-geist transition duration-300 ${
+                      pathname === page.route
+                        ? "text-black font-bold"
+                        : "text-[#777E90] hover:text-black font-semibold lg:font-medium"
+                    }`}
                   >
                     {page.title}
                   </Link>
@@ -82,7 +88,7 @@ const Header = () => {
                   <Button
                     onClick={() => setIsMenuOpen(false)}
                     text="View pricing"
-                    bg="bg-transparent text-primary"
+                    bg="bg-transparent text-primary transition-all duration-500 hover:bg-primary hover:text-white"
                   />
                 </Link>
                 <Button

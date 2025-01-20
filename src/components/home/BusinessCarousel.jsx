@@ -21,7 +21,7 @@ const BusinessCarousel = () => {
       </Swiper>
 
       {/* arrows */}
-      <div className="absolute bottom-[-2rem] left-0 z-10 flex items-center gap-8">
+      <div className="absolute bottom-[-4rem] left-0 z-10 flex items-center gap-8">
         <button className="custom-prev" aria-label="Previous Slide">
           <LeftIcon />
         </button>

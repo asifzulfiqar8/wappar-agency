@@ -12,10 +12,10 @@ const list = [
 const PaymentSection = () => {
   return (
     <section className="bg-white w-full">
-      <section className="container mx-auto px-4 pt-[60px] md:pt-[80px] pb-5">
+      <section className="container mx-auto px-4 pt-[60px] pb-5 md:pt-[80px] md:pb-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[5rem] xl:gap-[10rem]">
           <div className="relative">
-            <h6 className="text-[38px] font-bold md:font-extrabold font-dmsans text-[#23262F] max-w-[480px] leading-tight block lg:hidden">
+            <h6 className="text-[36px] md:text-[38px] font-bold md:font-extrabold font-dmsans text-[#23262F] max-w-[480px] leading-tight block lg:hidden">
               Affordable, Transparent Pricing – No Surprises
             </h6>
             <Image

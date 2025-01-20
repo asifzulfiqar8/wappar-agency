@@ -50,7 +50,7 @@ const Hero = () => {
       tl.to(
         videoContainerRef.current,
         {
-          y: -150,
+          y: -90,
           duration: 5,
         },
         "<"
@@ -96,7 +96,7 @@ const Hero = () => {
       });
 
       tl.to(headingRef.current, {
-        y: -50,
+        y: -20,
         scale: 0.5,
         duration: 3,
       });
@@ -116,12 +116,14 @@ const Hero = () => {
     <article className="px-4 relative w-full" ref={containerRef}>
       <section className="bg-[#000] w-full rounded-[20px]">
         <section className="w-full relative z-[1] hero md:h-screen overflow-hidden">
-          <div className="container mx-auto px-4 pt-5 md:pt-20">
+          <div className="container mx-auto px-4 pt-10 md:pt-20 relative">
             {/* header text start */}
-            <div ref={headingRef}>
+            <div ref={headingRef} className="px-2 sm:px-0">
               <button className="max-w-[415px] mx-auto p-1 border rounded-full hero_heading flex items-center gap-1 text-sm font-geist text-white">
-                <span className="bg-[#FFFFFF14] py-[2px] px-2 rounded-full">
-                  0 upfront cost
+                <span className="bg-[#FFFFFF14] py-[2px] px-2 rounded-full flex gap-1">
+                  <span className="block sm:hidden">0</span> 
+                  <span className="hidden sm:block">No</span> 
+                  upfront cost
                 </span>
                 Starting at $97 / month{" "}
                 <span className="hidden sm:block"> -No upfront cost</span>
@@ -133,7 +135,7 @@ const Hero = () => {
               <p className="mt-4 md:mt-6 text-base font-medium font-geist text-[#8B949E] text-center">
                 Completely risk free with a 7 day money back guarantee
               </p>
-              <div className="mt-4 md:mt-6 text-center">
+              <div className="mt-4 md:mt-6 text-center z-10">
                 <Link href="/pricing">
                   <Button text="View pricing" height="h-[39px]" />
                 </Link>
@@ -142,23 +144,15 @@ const Hero = () => {
             {/* header text end */}
             {/* video */}
             <div
-              className="relative mt-[54px] mb-[-5rem] md:mb-0"
+              className="relative pt-[54px] mb-[-5rem] md:mb-0"
               ref={videoContainerRef}
             >
-              <div className="absolute top-[-80px] left-1/2 transform -translate-x-1/2 w-full hidden md:block">
-                <Image
-                  src="/assets/images/vector.png"
-                  width={1455}
-                  height={200}
-                  alt="vector"
-                ></Image>
-              </div>
-              <div className="p-3 rounded-2xl border border-[#F8F8F82B] max-w-[1040px] 2xl:max-w-full 2xl:w-full relative mx-auto">
+              <div className="p-[6px] md:p-3 rounded-lg md:rounded-2xl border border-[#F8F8F82B] max-w-[1040px] 2xl:max-w-full 2xl:w-full relative mx-auto">
                 <video
                   ref={videoRef}
                   src="/assets/video/video.mp4"
                   muted
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-auto rounded-md md:rounded-lg"
                 ></video>
                 <button
                   onClick={togglePlayPause}
@@ -187,6 +181,16 @@ const Hero = () => {
                     </svg>
                   )}
                 </button>
+              </div>
+              {/* vector image */}
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full z-[-1]">
+                <Image
+                  src="/assets/images/vector.png"
+                  width={1455}
+                  height={200}
+                  className="w-full h-[200px] object-cover md:object-contain"
+                  alt="vector"
+                ></Image>
               </div>
             </div>
           </div>

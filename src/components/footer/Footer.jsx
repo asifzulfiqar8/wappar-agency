@@ -30,20 +30,20 @@ const cards = [
 const footerLinks = {
   mainLinks: [
     {
-      title: "Features",
-      route: "/features",
+      title: "Home",
+      route: "/",
     },
     {
-      title: "About Us",
+      title: "Industries",
       route: "/industries",
     },
     {
-      title: "Careers",
-      route: "/careers",
+      title: "Pricing",
+      route: "/pricing",
     },
     {
-      title: "Blog",
-      route: "/blog",
+      title: "Contact Us",
+      route: "/contact-us",
     },
   ],
   policyLinks: [
@@ -61,26 +61,26 @@ const footerLinks = {
 const socialLinks = [
   {
     icon: <FacebookIcon />,
-    route: "https://www.facebook.com/",
+    route: "https://www.facebook.com/wappr",
   },
   {
     icon: <InstagramIcon />,
-    route: "https://www.instagram.com/",
+    route: "https://www.instagram.com/wappr",
   },
   {
     icon: <LinkedInIcon />,
-    route: "https://www.linkedin.com/",
+    route: "https://www.linkedin.com/wappr",
   },
   {
     icon: <XIcon />,
-    route: "https://www.x.com/",
+    route: "https://www.x.com/wappr",
   },
 ];
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white">
-      <article className="container mx-auto px-4 pt-[60px] pb-7 md:pb-[42px] md:pt-[100px]">
+    <footer className="w-full bg-white relative">
+      <article className="container mx-auto px-8 md:px-4 pt-[60px] pb-7 md:pb-[42px] md:pt-[100px] mt-[56px]">
         <div className="flex md:justify-center relative">
           <Link
             href="/"
@@ -113,7 +113,7 @@ const Footer = () => {
               <Link
                 href={link.route}
                 key={i}
-                className="text-[#374151] text-sm font-geist font-medium"
+                className="text-[#374151] text-sm font-geist font-medium transition-all duration-300 hover:text-black"
               >
                 {link.title}
               </Link>
@@ -124,7 +124,7 @@ const Footer = () => {
               <Link
                 href={link.route}
                 key={i}
-                className="text-[#37415180] text-sm font-geist font-medium"
+                className="text-[#37415180] text-sm font-geist font-medium transition-all duration-300 hover:text-[#374151]"
               >
                 {link.title}
               </Link>
@@ -133,11 +133,11 @@ const Footer = () => {
         </div>
         {/* Link end */}
         {/* copyright */}
-        <div className="flex flex-col sm:flex-row max-w-[400px] mx-auto items-center gap-4 md:gap-10">
+        <div className="flex flex-col sm:flex-row md:justify-center md:items-center gap-4 md:gap-10">
           <p className="text-xs md:text-sm text-[#37415180] font-medium font-geist">
             © 2024 wappr. All rights reserved.
           </p>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 social-links">
             {socialLinks.map((link, i) => (
               <Link href={link.route} key={i}>
                 {link.icon}
@@ -146,6 +146,30 @@ const Footer = () => {
           </div>
         </div>
       </article>
+        <div className="absolute top-0 left-0 w-full block md:hidden">
+          <svg
+            width="375"
+            height="1"
+            viewBox="0 0 375 1"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="375" height="1" fill="url(#paint0_linear_68_2295)" />
+            <defs>
+              <linearGradient
+                id="paint0_linear_68_2295"
+                x1="-4.52112e-05"
+                y1="0.500009"
+                x2="375"
+                y2="0.500009"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.1" stopColor="#E3E3E3" />
+                <stop offset="1" stopColor="#F3F3F3" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
     </footer>
   );
 };

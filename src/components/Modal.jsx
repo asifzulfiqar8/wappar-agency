@@ -27,7 +27,11 @@ const Modal = ({ children, onClose, width, bg }) => {
           >
             <CancelIcon />
           </div>
-          <div className={`shadow-2xl shadow-[#0F0F0F1A] border border-[#F8F8F8] rounded-2xl p-5 w-full ${bg ? bg : 'bg-[#FCFCFD]'}`}>
+          <div
+            className={`shadow-2xl shadow-[#0F0F0F1A] border border-[#F8F8F8] rounded-2xl p-5 w-full ${
+              bg ? bg : "bg-[#FCFCFD]"
+            }`}
+          >
             {children}
           </div>
         </section>

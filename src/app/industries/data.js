@@ -2,7 +2,7 @@ export const tabsData = [
   {
     label: "E-commerce",
     content: {
-      heading: "Retail Stores & E-commerce",
+      heading: "Retail Stores & <span class='text-nowrap'>E-commerce:</span>",
       image: "/assets/images/industries/e-commerce.png",
       imageDescription:
         "Clothing boutiques, furniture stores, electronics shops, grocery stores, and more.",
@@ -28,7 +28,7 @@ export const tabsData = [
   {
     label: "Restaurants",
     content: {
-      heading: "Restaurants,Cafes & Takeaways",
+      heading: "Restaurants, Cafes & Takeaways",
       image: "/assets/images/industries/resturant.png",
       imageDescription:
         "Restaurants, cafes, fast-food outlets, takeaways, food trucks, and more",
@@ -54,7 +54,7 @@ export const tabsData = [
   {
     label: "Services",
     content: {
-      heading: "Service-Based Businesses",
+      heading: "<span class='text-nowrap'>Service-Based</span> Businesses:",
       image: "/assets/images/industries/services.png",
       imageDescription:
         "Salons, spas, repair services, fitness centers, cleaning companies, and more.",

@@ -13,7 +13,7 @@ const TransformSec = () => {
       scrollTrigger: {
         trigger: ".sticky",
         start: "top center",
-        end: "bottom top",
+        end: "bottom 100%",
         scrub: true,
       },
     });
@@ -36,7 +36,7 @@ const TransformSec = () => {
   return (
     <section className="w-full bg-[#191919] hidden xl:block">
       <section className="container mx-auto px-4 pt-[110px]">
-        <h6 className="text-[32px] md:text-[48px] font-extrabold md:font-semibold text-white text-center max-w-[995px] mx-auto leading-none font-dmsans">
+        <h6 className="text-[36px] md:text-[48px] font-extrabold text-white text-center max-w-[995px] mx-auto leading-none font-dmsans">
           Transforming Ideas into Digital Experiences.
         </h6>
         <p className="my-4 text-sm lg:text-2xl font-geist text-[#777E90] text-center max-w-[631px] mx-auto">
@@ -49,7 +49,7 @@ const TransformSec = () => {
           </div>
           <div className="sticky top-0 h-screen">
             {/* middle image */}
-            <div className="relative w-[810px] h-full">
+            <div className="relative w-[1050px]">
               <Image
                 className="mobile-hand absolute top-0 left-[20%] w-full h-screen"
                 src={mobileHandImg}

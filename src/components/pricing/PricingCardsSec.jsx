@@ -42,7 +42,7 @@ const PricingCardsSec = () => {
                   : "transparent",
               border:
                 activeTab === tab
-                  ? "1px solid #77CCFE"
+                  ? "1px solid #3772ff"
                   : "1px solid transparent",
             }}
           >
@@ -65,126 +65,136 @@ const PricingCard = ({ price, activeTab }) => {
   return (
     <>
       {/* Card one */}
-      <div className="pricing_card p-4 md:p-8 rounded-xl w-full max-w-[460px] lg:ml-auto h-max">
-        <div className="flex flex-col items-center gap-4">
-          <h6 className="cost text-center py-1 px-3 rounded-full text-white text-sm font-geist">
-            $0 up-front cost
-          </h6>
-          <p className="text-white text-center text-2xl font-semibold font-dmsans ">
-            Business plan
-          </p>
-          <h6 className="text-[72px] font-semibold font-geist text-[#5959594A] price leading-none">
-            ${price[0]}{" "}
-            <span className="text-[36px]">
-              /{activeTab === "monthly" ? "mo" : "yr"}
-            </span>
-          </h6>
-          <p className="text-base font-geist text-[#8B949E]">
-            7 day money back guarantee
-          </p>
-        </div>
-        <div className="mt-8 flex flex-col gap-4">
-          {features.map((list, i) => (
-            <List key={i} list={list} />
-          ))}
-          <div className="flex items-center justify-between md:justify-center gap-5 md:gap-12">
-            <Image
-              src="/assets/images/pricing/andriod.png"
-              width={38}
-              height={40}
-              alt="andriod"
-            />
-            <Image
-              src="/assets/images/pricing/app.png"
-              width={38}
-              height={40}
-              alt="app"
-            />
+      <div className="rounded-xl p-px bg-gradient-to-b from-[#ffffff6e] to-[#191919] to-[90%] max-w-[460px] w-full h-max">
+        <div className="pricing_card bg-[#313131] p-4 md:p-8 rounded-xl w-full max-w-[460px] lg:ml-auto h-max">
+          <div className="flex flex-col items-center gap-4">
+            <div className="rounded-[15px] p-px bg-gradient-to-b from-[#bbcfff] to-[#bbcfff33] to-[90%]">
+              <h6 className="cost bg-[#3768DD] text-center py-1 px-3 rounded-full text-white text-sm font-geist h-[29px]">
+                $0 up-front cost
+              </h6>
+            </div>
+            <p className="text-white text-center text-2xl font-semibold font-dmsans ">
+              Business plan
+            </p>
+            <h6 className="text-[72px] font-semibold font-geist text-[#5959594A] price leading-none">
+              ${price[0]}{" "}
+              <span className="text-[36px]">
+                /{activeTab === "monthly" ? "mo" : "yr"}
+              </span>
+            </h6>
+            <p className="text-base font-geist text-[#8B949E]">
+              7 day money back guarantee
+            </p>
           </div>
-          <div className="mt-4 flex flex-col sm:flex-row gap-4">
-            {["Done for you service", "Built in 7 days"].map((list, i) => (
+          <div className="mt-8 flex flex-col gap-4">
+            {features.map((list, i) => (
               <List key={i} list={list} />
             ))}
+            <div className="flex items-center justify-center gap-12">
+              <Image
+                src="/assets/images/pricing/andriod.png"
+                width={38}
+                height={40}
+                alt="andriod"
+              />
+              <Image
+                src="/assets/images/pricing/app.png"
+                width={38}
+                height={40}
+                alt="app"
+              />
+            </div>
+            <div className="mt-4 flex flex-col sm:flex-row gap-4">
+              {["Done for you service", "Built in 7 days"].map((list, i) => (
+                <List key={i} list={list} />
+              ))}
+            </div>
+            <Button
+              text="Get started"
+              width="w-full"
+              bg="bg-white text-[#000]"
+              weight="font-medium"
+              radius="rounded-lg"
+              border="border border-transparent"
+            />
           </div>
-          <Button
-            text="Get started"
-            width="w-full"
-            bg="bg-white text-[#000]"
-            weight="font-medium"
-            radius="rounded-lg"
-          />
         </div>
       </div>
       {/* Card two */}
-      <div className="pricing_card p-4 md:p-8 rounded-xl w-full max-w-[460px] lg:mr-auto">
-        <div className="flex flex-col items-center gap-4">
-          <h6 className="cost text-center py-1 px-3 rounded-full text-white text-sm font-geist">
-            $0 up-front cost
-          </h6>
-          <p className="text-white text-center text-2xl font-semibold font-dmsans ">
-            Business plan
-          </p>
-          <h6 className="text-[72px] font-semibold font-geist text-[#5959594A] price leading-none">
-            ${price[1]}{" "}
-            <span className="text-[36px]">
-              /{activeTab === "yearly" ? "mo" : "yr"}
-            </span>
-          </h6>
-          <p className="text-base font-geist text-[#8B949E]">
-            7 day money back guarantee
-          </p>
-        </div>
-        <div className="mt-8 flex flex-col gap-4">
-          {featuresTwo.map((list, i) => (
-            <List key={i} list={list} />
-          ))}
-          <div className="flex items-center justify-between md:justify-center gap-5 md:gap-12">
-            <Image
-              src="/assets/images/pricing/andriod.png"
-              width={38}
-              height={40}
-              alt="andriod"
-            />
-            <Image
-              src="/assets/images/pricing/windows.png"
-              width={38}
-              height={40}
-              alt="windows"
-            />
-            <Image
-              src="/assets/images/pricing/linux.png"
-              width={38}
-              height={40}
-              alt="linux"
-            />
-            <Image
-              src="/assets/images/pricing/app.png"
-              width={38}
-              height={40}
-              alt="app"
-            />
-          </div>
-          <div className="pt-4 border-t border-[#F8F8F817] border-dashed">
-            <h6 className="text-white text-base font-medium font-geist">
-              Includes everything in Business plan.
-            </h6>
-            <div className="mt-4 flex flex-col gap-4">
-              {[
-                "Android/IOS Apps",
-                "Unlimited push notifications",
-                "Managed & maintained for you",
-              ].map((list, i) => (
-                <List key={i} list={list} i={i} />
-              ))}
+      <div className="rounded-xl p-px bg-gradient-to-b from-[#ffffff6e] to-[#191919] to-[90%] max-w-[460px] w-full h-max">
+        <div className="pricing_card bg-[#313131] p-4 md:p-8 rounded-xl w-full max-w-[460px] lg:mr-auto">
+          <div className="flex flex-col items-center gap-4">
+            <div className="rounded-[15px] p-px bg-gradient-to-b from-[#bbcfff] to-[#bbcfff33] to-[90%]">
+              <h6 className="cost bg-[#3768DD] text-center py-1 px-3 rounded-full text-white text-sm font-geist">
+                $0 up-front cost
+              </h6>
             </div>
+            <p className="text-white text-center text-2xl font-semibold font-dmsans ">
+              Business plan
+            </p>
+            <h6 className="text-[72px] font-semibold font-geist text-[#5959594A] price leading-none">
+              ${price[1]}{" "}
+              <span className="text-[36px]">
+                /{activeTab === "yearly" ? "mo" : "yr"}
+              </span>
+            </h6>
+            <p className="text-base font-geist text-[#8B949E]">
+              7 day money back guarantee
+            </p>
           </div>
-          <Button
-            text="Get started"
-            width="w-full"
-            bg="bg-white text-[#000]"
-            weight="font-medium"
-            radius="rounded-lg"
-          />
+          <div className="mt-8 flex flex-col gap-4">
+            {featuresTwo.map((list, i) => (
+              <List key={i} list={list} />
+            ))}
+            <div className="flex items-center justify-between md:justify-center gap-5 md:gap-12">
+              <Image
+                src="/assets/images/pricing/andriod.png"
+                width={38}
+                height={40}
+                alt="andriod"
+              />
+              <Image
+                src="/assets/images/pricing/windows.png"
+                width={38}
+                height={40}
+                alt="windows"
+              />
+              <Image
+                src="/assets/images/pricing/linux.png"
+                width={38}
+                height={40}
+                alt="linux"
+              />
+              <Image
+                src="/assets/images/pricing/app.png"
+                width={38}
+                height={40}
+                alt="app"
+              />
+            </div>
+            <div className="pt-4 border-t border-[#F8F8F817] border-dashed">
+              <h6 className="text-white text-base font-medium font-geist">
+                Includes everything in Business plan.
+              </h6>
+              <div className="mt-4 flex flex-col gap-4">
+                {[
+                  "Android/IOS Apps",
+                  "Unlimited push notifications",
+                  "Managed & maintained for you",
+                ].map((list, i) => (
+                  <List key={i} list={list} i={i} />
+                ))}
+              </div>
+            </div>
+            <Button
+              text="Get started"
+              width="w-full"
+              bg="bg-white text-[#000]"
+              weight="font-medium"
+              radius="rounded-lg"
+              border="border border-transparent"
+            />
+          </div>
         </div>
       </div>
     </>
@@ -201,7 +211,7 @@ const List = ({ list, i }) => {
       <div className="size-[16px] mb-[2px] sm:mb-[6px]">
         <CheckedIcon />
       </div>
-      <p className={`text-base font-medium text-[#FFFFFF99]`}>{list}</p>
+      <p className={`text-base font-medium text-[#FFFFFF90]`}>{list}</p>
     </div>
   );
 };

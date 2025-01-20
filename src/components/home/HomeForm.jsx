@@ -16,17 +16,16 @@ const HomeForm = () => {
   const handleFormValues = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
-  console.table(formValues);
 
   const handleForm = (e) => {
     e.preventDefault();
     // setModal(true)
   };
   return (
-    <>
+    <div className="rounded-[30px] p-px bg-gradient-to-b from-[#f8f8f86e] to-[#191919] to-[90%]">
       <form
         onSubmit={handleForm}
-        className="bg-[#242424] rounded-[30px] border border-[#F8F8F830] py-4 px-4 md:py-[40px] md:px-8 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 relative z-10"
+        className="bg-[#242424] rounded-[30px] py-4 px-4 md:py-[40px] md:px-8 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 relative z-10"
       >
         <div className="md:col-span-6">
           <Input
@@ -70,6 +69,7 @@ const HomeForm = () => {
             width="w-full sm:w-[164px]"
             textSize="text-base md:text-[22px]"
             weight="font-medium"
+            height="h-[48px] md:h-[66px]"
           />
         </div>
       </form>
@@ -78,7 +78,7 @@ const HomeForm = () => {
           cards
         </Modal>
       )}
-    </>
+    </div>
   );
 };
 

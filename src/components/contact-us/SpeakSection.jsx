@@ -10,11 +10,14 @@ import {
 } from "@/assets/icons";
 import Modal from "../Modal";
 import CallBackModal from "./CallBackModal";
+
 const SpeakSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleCallModalOpen = () => {
     setIsModalOpen(!isModalOpen);
   };
+
   return (
     <article className="md:container mx-auto px-4 py-12 md:py-[112px]">
       <section>
@@ -22,7 +25,7 @@ const SpeakSection = () => {
           Prefer to Speak Directly? <br /> We're Just a Click or
           <br className="block md:hidden" /> Email Away!
         </h3>
-        <section className="flex lg:flex-row gap-[64px] lg:gap-0 flex-col justify-center lg:justify-between my-[32px] md:mt-[60px]">
+        <section className="flex lg:flex-row gap-[64px] lg:gap-0 flex-col justify-center lg:justify-between my-[32px] md:my-[60px]">
           {/* Email Section */}
           <div className="flex flex-col items-center lg:max-w-[384px] px-5 space-y-[16px]">
             <MailIcon />
@@ -56,7 +59,7 @@ const SpeakSection = () => {
               weight="font-[500]"
               radius="rounded-[8px]"
               endIcon={<RightArrowIcon />}
-              width="w-fit"
+              width="custom-btn w-fit transition-all duration-500 hover:bg-primary hover:text-white"
               onClick={handleCallModalOpen}
             />
           </div>
@@ -74,19 +77,21 @@ const SpeakSection = () => {
             <Button
               text="Chat with us"
               bg="bg-none text-primary"
-              weight="font-[500]"
+              weight="font-[500] transition-all duration-500 hover:bg-primary hover:text-white"
               radius="rounded-[8px]"
               endIcon={<RightArrowIcon />}
-              width="w-fit"
+              width="custom-btn w-fit"
             />
           </div>
-          {isModalOpen && (
-            <Modal onClose={handleCallModalOpen}>
-              <CallBackModal onClose={handleCallModalOpen} />
-            </Modal>
-          )}
         </section>
       </section>
+
+      {/* Callback Modal */}
+      {isModalOpen && (
+        <Modal onClose={handleCallModalOpen}>
+          <CallBackModal onClose={handleCallModalOpen} />
+        </Modal>
+      )}
     </article>
   );
 };

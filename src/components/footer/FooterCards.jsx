@@ -6,7 +6,7 @@ const FooterCards = ({ card, ...rest }) => {
     >
       <div className="flex items-center gap-4">
         {card.icon}
-        <p className="text-[#FBFBFB] text-lg font-bold font-dmsans">
+        <p className="text-[#FBFBFB] text-left text-lg font-bold font-dmsans  lg:text-left  min-w-[180px] lg:w-[0] ">
           {card.title}
         </p>
       </div>

@@ -61,24 +61,10 @@ body::-webkit-scrollbar-thumb {
 
 /* pricing page */
 .pricing_card {
-  background: linear-gradient(
-    23.95deg,
-    rgba(255, 255, 255, 0.12) 30.95%,
-    rgba(255, 255, 255, 0.23) 83.96%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  border-color: rgba(255, 255, 255, 0);
-  border-image-source: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.11) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
   backdrop-filter: blur(60.7826042175293px);
 }
 
 .pricing_card .cost {
-  background: linear-gradient(180deg, #3772ff 0%, rgba(55, 114, 255, 0.4) 100%);
-  border: 1px solid #3f4aaf80;
   backdrop-filter: blur(-1px);
   /* box-shadow: 0px 10px 10px 0px #0000001A; */
   /* box-shadow: 0px 4px 4px 0px #0000000D; */
@@ -87,6 +73,14 @@ body::-webkit-scrollbar-thumb {
 
 .pricing_card .price {
   text-shadow: 2px 0.03px 0px #000;
+}
+
+.social-links a svg path {
+  transition: all .3s ease;
+}
+
+.social-links a:hover svg path {
+  fill: var(--primary);
 }
 
 /* loader */
@@ -111,8 +105,15 @@ body::-webkit-scrollbar-thumb {
   mask-composite: intersect;
   animation: l4 1s infinite steps(10);
 }
+
 @keyframes l4 {
   to {
     transform: rotate(1turn);
   }
+}
+.custom-btn path {
+  transition: all 0.5s;
+}
+.custom-btn:hover path {
+  fill: white;
 }

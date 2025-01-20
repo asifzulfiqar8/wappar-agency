@@ -62,7 +62,7 @@ const Tabs = ({ tabsData, activeTab, setActiveTab }) => {
             />
             <path
               fillRule="evenodd"
-              clip-rule="evenodd"
+              clipRule="evenodd"
               d="M20.2071 13.7929C19.8166 13.4024 19.1834 13.4024 18.7929 13.7929L16 16.5858L13.2071 13.7929C12.8166 13.4024 12.1834 13.4024 11.7929 13.7929C11.4024 14.1834 11.4024 14.8166 11.7929 15.2071L15.2929 18.7071C15.6834 19.0976 16.3166 19.0976 16.7071 18.7071L20.2071 15.2071C20.5976 14.8166 20.5976 14.1834 20.2071 13.7929Z"
               fill="#777E91"
             />
@@ -143,9 +143,16 @@ const TabsContent = ({ tabsData, activeTab }) => {
             </p>
           </div>
           <div className="flex flex-col justify-center gap-10">
-            <h5 className="text-[48px] md:text-[56px] font-bold font-dmsans text-[#23262F] leading-none">
-              {tab.content.heading}
-            </h5>
+            {tab.content.heading.includes("</span>") ? (
+              <h5
+                className="text-[48px] md:text-[56px] font-bold font-dmsans text-[#23262F] leading-none max-w-[483px]"
+                dangerouslySetInnerHTML={{ __html: tab.content.heading }}
+              ></h5>
+            ) : (
+              <h5 className="text-[48px] md:text-[56px] font-bold font-dmsans text-[#23262F] leading-none max-w-[483px]">
+                {tab.content.heading}:
+              </h5>
+            )}
             <div className="flex flex-col gap-8 lg:gap-12">
               {tab.content.headingsDescriptons.map((list, i) => (
                 <List list={list} key={i} />

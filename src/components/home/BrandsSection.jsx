@@ -9,6 +9,7 @@ const images = [
   "/assets/images/hero/cbs.png",
   "/assets/images/hero/daily-news.png",
   "/assets/images/hero/image.png",
+  "/assets/images/hero/nbc.png",
 ];
 
 const BrandsSection = () => {
@@ -17,26 +18,35 @@ const BrandsSection = () => {
   useEffect(() => {
     const marquee = marqueeRef.current;
 
-    // Duplicate images to create a seamless loop
+    if (!marquee) return;
+
     const totalImages = [...images, ...images, ...images, ...images];
 
-    // Set up GSAP animation
-    const animation = gsap.to(marquee, {
-      x: "-100%",
-      duration: 150,
-      ease: "none",
-      repeat: -1,
-    });
+    const totalWidth = marquee.scrollWidth;
+
+    const animation = gsap.fromTo(
+      marquee,
+      { x: 0 },
+      {
+        x: -totalWidth / 2,
+        duration: 150,
+        ease: "none",
+        repeat: -1,
+      }
+    );
 
     return () => animation.kill();
   }, []);
 
   return (
-    <section className="w-full overflow-hidden py-[30px] md:py-[70px]">
+    <section className="w-full overflow-hidden py-[30px] md:py-[70px] relative">
+       <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 bottom-0 left-0 w-10 sm:w-40 bg-gradient-to-r from-white to-transparent z-10"></div>
+        <div className="absolute top-0 bottom-0 right-0 w-10 sm:w-40 bg-gradient-to-l from-white to-transparent z-10"></div>
+      </div>
       <div
         ref={marqueeRef}
-        className="flex w-max gap-6 md:gap-10 items-center"
-        style={{ display: "flex" }}
+        className="flex w-max gap-[30px] md:gap-[62px] items-center"
       >
         {[...images, ...images, ...images, ...images].map((image, i) => (
           <Image
