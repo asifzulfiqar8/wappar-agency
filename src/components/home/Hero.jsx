@@ -147,7 +147,7 @@ const Hero = () => {
               className="relative pt-[54px] mb-[-5rem] md:mb-0"
               ref={videoContainerRef}
             >
-              <div className="p-[6px] md:p-3 rounded-lg md:rounded-2xl border border-[#F8F8F82B] max-w-[1040px] 2xl:max-w-full 2xl:w-full relative mx-auto">
+              <div className="p-[6px] md:p-3 rounded-lg md:rounded-2xl border border-[#F8F8F82B] max-w-[1040px] 2xl:max-w-[90%] 2xl:w-[90%] relative mx-auto">
                 <video
                   ref={videoRef}
                   src="/assets/video/video.mp4"
