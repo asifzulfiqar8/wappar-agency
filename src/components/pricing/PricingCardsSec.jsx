@@ -65,8 +65,8 @@ const PricingCard = ({ price, activeTab }) => {
   return (
     <>
       {/* Card one */}
-      <div className="rounded-xl p-px bg-gradient-to-b from-[#ffffff6e] to-[#191919] to-[90%] max-w-[460px] w-full h-max">
-        <div className="pricing_card bg-[#313131] p-4 md:p-8 rounded-xl w-full max-w-[460px] lg:ml-auto h-max">
+      <div className="rounded-xl p-px bg-gradient-to-b from-[#ffffff6e] to-[#1919198e] to-[90%] max-w-[460px] w-full h-max ml-auto">
+        <div className="pricing_card bg-[#3131319d] p-4 md:p-8 rounded-xl w-full max-w-[460px] lg:ml-auto h-max">
           <div className="flex flex-col items-center gap-4">
             <div className="rounded-[15px] p-px bg-gradient-to-b from-[#bbcfff] to-[#bbcfff33] to-[90%]">
               <h6 className="cost bg-[#3768DD] text-center py-1 px-3 rounded-full text-white text-sm font-geist h-[29px]">
@@ -121,8 +121,8 @@ const PricingCard = ({ price, activeTab }) => {
         </div>
       </div>
       {/* Card two */}
-      <div className="rounded-xl p-px bg-gradient-to-b from-[#ffffff6e] to-[#191919] to-[90%] max-w-[460px] w-full h-max">
-        <div className="pricing_card bg-[#313131] p-4 md:p-8 rounded-xl w-full max-w-[460px] lg:mr-auto">
+      <div className="rounded-xl p-px bg-gradient-to-b from-[#ffffff6e] to-[#1919198e] to-[90%] max-w-[460px] w-full h-max mr-auto">
+        <div className="pricing_card bg-[#3131319d] p-4 md:p-8 rounded-xl w-full max-w-[460px] lg:mr-auto">
           <div className="flex flex-col items-center gap-4">
             <div className="rounded-[15px] p-px bg-gradient-to-b from-[#bbcfff] to-[#bbcfff33] to-[90%]">
               <h6 className="cost bg-[#3768DD] text-center py-1 px-3 rounded-full text-white text-sm font-geist">

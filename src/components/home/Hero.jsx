@@ -45,12 +45,13 @@ const Hero = () => {
         height: 50,
         opacity: 0,
         duration: 5,
+        overwrite: true,
       });
 
       tl.to(
         videoContainerRef.current,
         {
-          y: -90,
+          y: -140,
           duration: 5,
         },
         "<"
@@ -118,11 +119,15 @@ const Hero = () => {
         <section className="w-full relative z-[1] hero md:h-screen overflow-hidden">
           <div className="container mx-auto px-4 pt-10 md:pt-20 relative">
             {/* header text start */}
-            <div ref={headingRef} className="px-2 sm:px-0">
+            <div
+              ref={headingRef}
+              className="px-2 sm:px-0"
+              style={{ willChange: "transform, opacity" }}
+            >
               <button className="max-w-[415px] mx-auto p-1 border rounded-full hero_heading flex items-center gap-1 text-sm font-geist text-white">
                 <span className="bg-[#FFFFFF14] py-[2px] px-2 rounded-full flex gap-1">
-                  <span className="block sm:hidden">0</span> 
-                  <span className="hidden sm:block">No</span> 
+                  <span className="block sm:hidden">0</span>
+                  <span className="hidden sm:block">No</span>
                   upfront cost
                 </span>
                 Starting at $97 / month{" "}
@@ -146,6 +151,7 @@ const Hero = () => {
             <div
               className="relative pt-[54px] mb-[-5rem] md:mb-0"
               ref={videoContainerRef}
+              style={{ willChange: "transform, opacity" }}
             >
               <div className="p-[6px] md:p-3 rounded-lg md:rounded-2xl border border-[#F8F8F82B] max-w-[1040px] 2xl:max-w-[90%] 2xl:w-[90%] relative mx-auto">
                 <video
@@ -153,6 +159,7 @@ const Hero = () => {
                   src="/assets/video/video.mp4"
                   muted
                   className="w-full h-auto rounded-md md:rounded-lg"
+                  style={{ willChange: "transform, opacity" }}
                 ></video>
                 <button
                   onClick={togglePlayPause}

@@ -135,6 +135,7 @@ const TabsContent = ({ tabsData, activeTab }) => {
               width={576}
               height={576}
               className="w-full"
+              priority={i === 0}
               alt={`image${i}`}
             ></Image>
             <p className="mt-4 text-xs md:text-base font-medium font-geist text-[#777E90]">

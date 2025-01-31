@@ -37,6 +37,8 @@ const ViewPricing = () => {
                 text="View pricing"
                 weight="font-medium"
                 height="h-[66px]"
+                width="w-full sm:w-[190px]"
+                textSize="text-base md:text-[22px]"
               />
             </Link>
           </div>

@@ -41,8 +41,8 @@ const BrandsSection = () => {
   return (
     <section className="w-full overflow-hidden py-[30px] md:py-[70px] relative">
        <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 bottom-0 left-0 w-10 sm:w-40 bg-gradient-to-r from-white to-transparent z-10"></div>
-        <div className="absolute top-0 bottom-0 right-0 w-10 sm:w-40 bg-gradient-to-l from-white to-transparent z-10"></div>
+        <div className="absolute top-0 bottom-0 left-0 w-10 sm:w-[15rem] bg-gradient-to-r from-[#ffffff96] to-transparent z-10"></div>
+        <div className="absolute top-0 bottom-0 right-0 w-10 sm:w-[15rem] bg-gradient-to-l from-[#ffffff96] to-transparent z-10"></div>
       </div>
       <div
         ref={marqueeRef}
