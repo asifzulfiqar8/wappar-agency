@@ -16,10 +16,10 @@ const pages = [
     title: "Industries",
     route: "/industries",
   },
-  {
-    title: "Features",
-    route: "/features",
-  },
+  // {
+  //   title: "Features",
+  //   route: "/features",
+  // },
   {
     title: "Contact us",
     route: "/contact-us",
